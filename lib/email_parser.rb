@@ -8,7 +8,7 @@ class EmailParser
   
   def parse
     p_array = @emails.split(/[,|\s]/)
-    parsed = p_array.uniq 
+    parsed = p_array.uniq.delete_if {|email| email.length < 1 } 
     parsed
   end 
 # emails. The parse method on the class should separate them into
